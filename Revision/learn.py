@@ -153,4 +153,38 @@ for digit in str(num):
     if int(digit) % 2 == 0:
         count += 1
 print(count)
+
+
+with open("myfile.txt", "r") as f:
+    content = f.read()
+    word = content.split()
+    print(content)
+    print(word)
+    print(len(word))
+
+
+A = [1, 2, 3, 4, 5]
+print(max(A))
+print(min(A))
+
+A = ["Ali", "Sara", "Raj", "Mia", "Zara"]
+A.pop()
+print(A)    
+
+even_numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+for num in even_numbers:
+    if (num) % 2 == 0:
+        print(num)
+
+
+item = ["apple", "banana", "orange", "grape", "kiwi"]
+item = sorted(item)
+print(item)
+dinnerbone = sorted(item, reverse=True)
+print(dinnerbone)
+
 """
+
+num = [1, 2, 3, 2, 4, 1, 5, 3, 6, 4, 7, 1, 8, 5, 9, 6, 10, 7, 11, 8, 12, 9, 13, 10]
+unique_numbers = set(num)
+print(unique_numbers)
