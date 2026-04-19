@@ -97,36 +97,39 @@ while True:
  
 # --- Subtitle: Practice 2 — Bank Account System ---
 
-class account:
+"""
+
+class Account:
     def __init__(self, name, balance=0):
         self.name = name
         self.balance = balance
-        print(f"The account of {name} has been created with ${balance} in ABCD Bank")
+        print(f"The A of {name} has been created with ${balance} in ABCD Bank")
  
-    def deposite(self, amount):
+    def deposit(self, amount):
         self.balance += amount
-        print(f"Your account has {self.balance} USD.")
+        print(f"Your A has {self.balance} USD.")
  
     def withdraw(self, amount):
         if amount > self.balance:
             print("The balance is insufficient.")
         else:
             self.balance -= amount
-            print(f"Your account has {self.balance} USD.")
+            print(f"Your A has {self.balance} USD.")
  
     def check(self):
         print(f"The current balance of {self.name} is {self.balance}")
  
-# outer loop — account creation
+
+# outer loop — A creation
 while True:
-    Name = input("\nEnter name to open account (or 'exit' to quit): ")
+    Name = input("\nEnter name to open A (or 'exit' to quit): ")
     if Name.lower() == "exit":
         break
     if not Name.replace(" ", "").isalpha():
         print("Enter a correct name.")
         continue
  
-    User = account(Name)
+    User = Account(Name)
     account_created = True
  
     # inner loop — transaction session
@@ -137,7 +140,7 @@ while True:
                 break
             elif Choice == "d":
                 amt = float(input("Enter deposit amount: "))
-                User.deposite(amt)
+                User.deposit(amt)
             elif Choice == "w":
                 amt = float(input("Enter withdraw amount: "))
                 User.withdraw(amt)
@@ -145,3 +148,142 @@ while True:
                 User.check()
             else:
                 print("Invalid option.")
+
+"""
+
+"""
+
+class User:
+    def __init__(self, name, email):
+        self.name = name
+        self.email = email
+    def greet(self):
+        print("HEY! this is User ")
+
+class Admin(User):
+    def __init__(self, name, email):
+        super().__init__(name, email)
+        self.permission = ["delete", "ban"]
+    def greet(self):
+        print(f"Hello Admin {self.name}")
+
+class Customer(User):
+    def __init__(self, name, email):
+        super().__init__(name, email)
+        self.purchase_hist = []
+    def greet(self):
+     print(f"Welcome {self.name}")
+
+admin_obj = Admin("Sumit", "sumit@college.edu")
+customer_obj = Customer("Aryan", "aryan@email.com")
+
+admin_obj.greet()
+customer_obj.greet()
+print(f"Admin permissions: {admin_obj.permission}")
+print(f"Customer history: {customer_obj.purchase_hist}")
+
+"""
+
+"""
+
+class Animal:
+    def __init__(self,name):
+        self.name = name
+
+    def speak(self):
+        print(f"{self.name} make a sound")
+
+
+class Dog(Animal):
+    def __init__(self, name):
+        super().__init__(name)
+
+    def speak(self):
+        super().speak()
+        print(f"{self.name} says Woof")
+
+class cat(Animal):
+    def __init__(self, name):
+        super().__init__(name)
+
+    def speak(self):
+        super().speak()
+        print(f"{self.name} says Meow") 
+
+
+class cow(Animal):
+    def __init__(self, name):
+        super().__init__(name)
+
+    def speak(self):
+        super().speak()
+        print(f"{self.name} says Moo")  
+
+
+class sheep(Animal):
+    def __init__(self, name):
+        super().__init__(name)
+
+    def speak(self):
+        super().speak()
+        print(f"{self.name} says Baa")
+
+
+class duck(Animal):
+    def __init__(self, name):
+        super().__init__(name)
+
+    def speak(self):
+        super().speak()
+        print(f"{self.name} says Quack")
+
+d = Dog("Bruno")
+c = cat("Whiskers")
+b = cow("Bessie")
+a = sheep("Dolly")
+k = duck("Donald")  
+
+
+d.speak()
+c.speak()
+b.speak()
+a.speak()
+k.speak()
+
+"""
+
+"""
+class People:
+    def __init__(self,name, age):
+        self.name = name
+        self.age = age
+
+    def Introduce(self):
+        print(f"Hello, my name is {self.name} and I am {self.age} years old.")
+
+class Student(People):
+    def __init__(self,name,age,grade):
+        super().__init__(name,age)
+        self.grade = grade
+
+    def Introduce(self):
+        super().Introduce()
+        print(f"I am in grade {self.grade}")
+
+class Teacher(People):
+    def __init__(self,name,age,subject):
+        super().__init__(name,age)
+        self.subject = subject
+
+    def Introduce(self):
+        super().Introduce()
+        print(f"I teach {self.subject}")
+
+
+s = Student("Sumit", 18, 12)
+t = Teacher("Mr. Sharma", 35, "Mathematics")
+
+s.Introduce()
+t.Introduce()
+
+"""
