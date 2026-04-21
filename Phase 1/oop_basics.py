@@ -360,3 +360,53 @@ print(voter1.has_voted())
 
 voter1.get_voted()
 """
+
+
+# ==============================================================================
+# DAY 8 — Polymorphism (Same Method, Different Behavior)
+# ==============================================================================
+# TOPIC: POLYMORPHISM
+# ==============================================================================
+
+# --- Practice 1 — Shape Area System (Small vs Large Classifier) ---
+"""
+class Area:
+    def area(self):
+        print("Not implemented")
+
+class Circle(Area):
+    def __init__(self, radius):
+        self.radius = radius
+        self.name = "Circle"
+
+    def area(self):
+        return 3.14 * self.radius ** 2
+
+class Rectangle(Area):
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+        self.name = "Rectangle"
+
+    def area(self):
+        return self.length * self.width
+
+shapes = [Circle(5), Rectangle(10, 5), Circle(2), Rectangle(3, 4), Circle(8), Rectangle(2, 2)]
+small = []
+large = []
+
+for shape in shapes:
+    result = shape.area()
+    if result > 50:
+        large.append(shape)
+    else:
+        small.append(shape)
+
+print("SMALL:")
+for shape in small:
+    print(f"{shape.name} - {shape.area()}")
+
+print("LARGE:")
+for shape in large:
+    print(f"{shape.name} - {shape.area()}")
+"""
